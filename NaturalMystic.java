@@ -1,3 +1,5 @@
+package natural;
+
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *        NaturalMystic                                                                      *                                                                                           *
@@ -433,9 +435,9 @@ class panelTexto extends JFrame {
 		super( "Tiempo, nivel y puntaje" );
 		setLayout(new BorderLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
-		setSize(210,100);
+		setSize(210,200);
 		setVisible(true);
-	    setLocation(500,200);
+	    setLocation(500,100);
     cronometro = new JLabel(" Tiempo restante: "+tiempo+" segundos", JLabel.CENTER); 
     nivel = new JLabel(" Nivel: "+(Natural.NivelCantidad-2), JLabel.CENTER); 
     Puntaje = new JLabel("Puntaje: "+Natural.Puntos, JLabel.CENTER);
@@ -488,10 +490,20 @@ class panelTexto extends JFrame {
 	 	do{
 	 	}while(tiempo!=0);
 	 } 
+	 
 	 public void refrescarCifras(){
+		 Icon technologies = new ImageIcon( getClass().getResource( "techno.gif" ) );
+		  JLabel imagen;
+		 imagen=new JLabel();
+		 imagen.setIcon(technologies);
+			add(imagen);
+			
+		
 	 	cronometro.setText(" Tiempo Restante: "+tiempo+" segundos");
         nivel.setText(" Nivel: "+(Natural.NivelCantidad-2));
         Puntaje.setText(" Puntaje: "+ Natural.Puntos);
+       
+		
         cronometro.setForeground(Color.BLUE);
         logros.limpiarFrame();
 	 }	           	
@@ -585,16 +597,16 @@ class HiloPanelTexto extends Thread{
  
 class Sonidos extends Thread{
 private Clip sonido0, sonido1, sonido2, sonido3, sonido4, sonido5, sonido6, sonido7, sonido8, sonido9;
-private File sound0 = new File("/sonidos/tono0.wav"); 
-private File sound1 = new File("/sonidos/tono1.wav"); 
-private File sound2 = new File("/sonidos/tono2.wav"); 
-private File sound3 = new File("/sonidos/tono3.wav");
-private File sound4 = new File("/sonidos/tono4.wav"); 
-private File sound5 = new File("/sonidos/tono5.wav"); 
-private File sound6 = new File("/sonidos/tono6.wav");
-private File sound7 = new File("/sonidos/tono7.wav");
-private File sound8 = new File("/sonidos/tono8.wav");
-private File sound9 = new File("/sonidos/tono9.wav");
+private File sound0 = new File("tono0.wav"); 
+private File sound1 = new File("tono1.wav"); 
+private File sound2 = new File("tono2.wav"); 
+private File sound3 = new File("tono3.wav");
+private File sound4 = new File("tono4.wav"); 
+private File sound5 = new File("tono5.wav"); 
+private File sound6 = new File("tono6.wav");
+private File sound7 = new File("tono7.wav");
+private File sound8 = new File("tono8.wav");
+private File sound9 = new File("tono9.wav");
 		
 
 
@@ -704,12 +716,12 @@ private JLabel imagen;
 private JLabel texto;
 	
 	Presentacion(){
-		super( "DtcSrni Technologies Presenta:" );
+		super( "Ing. en Sistemas Presenta:" );
 		setLayout( new FlowLayout() );
-	    texto = new JLabel("DtcSrni Technologies Presenta: Natural Mystic");
+	    texto = new JLabel("Grupo 17 de |Ing. en Sistemas| Presenta: Natural Mystic");
 	    imagen=new JLabel();
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setSize( 500, 230 );
+        setSize( 500, 180 );
         setVisible( true );
         setLocation(500,300);	
 	}
